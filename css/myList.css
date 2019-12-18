@@ -1,0 +1,72 @@
+.container>p{
+	text-align: center;
+	margin: 1rem 0;
+	flex-shrink: 0;
+	text-shadow: 2px 2px 5px #bbb;
+	font-size: 2.5rem;
+}
+.container table{
+	width:100%;
+}
+table{
+	border-collapse: collapse;
+}
+table,td,th{
+	border:1px solid #aaa;
+}
+.container thead{
+	background-color: #ccc;
+}
+.container table tr{
+	width:100%;
+	display: flex;
+}
+/*.container tbody tr:nth-of-type(even){
+	background-color: #ccc;
+}*/
+.container td,.container th{
+	flex:1;
+	height:4rem;
+	width:10rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.container th:nth-of-type(1),.container td:nth-of-type(1){
+	flex:2;
+}
+.container th{
+	font-size: 1.5rem;
+	font-weight: 500;
+}
+.all-price{
+	font-size: 1.5rem;
+	float:right;
+	margin:0.5rem;
+	margin-right: 6rem;
+}
+.delete{
+	font-size: 1rem;
+	width:100%;
+	height: 100%;
+	border:none;
+	background-color:#eefaff; 
+}
+.delete:hover{
+	cursor: pointer;
+	color:blue;
+	/*display: inline-block;
+	transform: scale(1.2);*/
+}
+.back{
+	display: inline-block;
+	text-decoration: none;
+	color:#111;
+	font-size: 1rem;
+	margin:1rem;
+	margin-left:5rem;
+}
+.back:hover{
+	color:blue;
+	transform: scale(1.1);
+}

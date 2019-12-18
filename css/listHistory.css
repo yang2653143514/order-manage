@@ -1,0 +1,25 @@
+
+.container{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.chart{
+	margin:3rem 0;
+}
+.chart1{
+	width:20rem;
+	height:20rem;
+}
+.chart2{
+	width:20rem;
+	height:20rem;
+}
+.chart3{
+	width:20rem;
+	height:20rem;
+}
+.chart4{
+	width:20rem;
+	height:20rem;
+}

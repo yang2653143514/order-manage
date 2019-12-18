@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的订单</title>
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<link rel="stylesheet" type="text/css" href="./css/myList.css">
+</head>
+<body>
+	<header>
+		<h1>电子科技大学食堂点餐系统</h1>
+		<ul class="header-ul">
+			<li><a href="./index.html">主页</a></li>
+			<li><a href="#">我的订单</a></li>
+			<li><a href="./listHistory.html">订单统计</a></li>
+		</ul>
+	</header>
+	<div class="main">
+		<div class="container" id="container">
+			<p>我的订单</p>
+			<table>
+				<thead>
+					<tr>
+						<th>菜品</th>
+						<th>单价</th>
+						<th>数量</th>
+						<th>删除</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+			<div>
+				<a href="./index.html" class="back">如果您还要增加食物，请点击这里</a>
+				<p class="all-price">订单总价:&nbsp&nbsp<span id="price"></span></p>
+			</div>
+			<footer>
+				<h1>Made with <span style="color:red">&nbsp❤&nbsp</span> by 人机无C哈</h1>
+			</footer>
+		</div>
+	</div>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/myList.js"></script>
+</body>
+</html>
