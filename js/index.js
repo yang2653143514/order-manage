@@ -2,7 +2,7 @@ $(function(){
 	var addBut = $('#add-button');
 	var a = 16;
 	var items = 0,flag = false;//控制购物车的显示
-	function test(button){//若购物车里已有商品，只增加数目
+	function test(button){//若购物车里已有此商品，只增加商品数目
 		var name = document.querySelectorAll('#name');
 		for([index,val] of name.entries()){
 			if($(val).text() == button.attr('name')){
@@ -19,12 +19,12 @@ $(function(){
 			$('#container').animate({left:'8rem'},500);
 			$('#message').animate({right:'0rem'},500);
 		}
-		if( test(but) ){//若购物车里已有商品，只增加数目
+		if( test(but) ){//若购物车里已有此商品，只增加商品数目
 			var index = test(but);
 			var span = document.querySelectorAll('#count')[index - 1];
 			var count = span.innerText;
 			span.innerText = ++count;
-		} else{
+		} else{//若购物车里没有此商品，增加此商品
 			items++;
 			$('#food').append(`
 				<li>
@@ -60,7 +60,7 @@ $(function(){
 			}
 		}
 	})
-	$('#toggle').on('click',function(){//点击切换购物车
+	$('#toggle').on('click',function(){//点击切换购物车的显示与否
 		if(!flag){
 			flag = true;
 			$('#container').animate({left:'8rem'},500);
@@ -75,7 +75,7 @@ $(function(){
 		if(!confirm('您确定要提交订单么？')){
 			return false;
 		} else {
-			$('#food>li').each(function(index,val){
+			$('#food>li').each(function(index,val){//判断数据库里是否已有该商品，若有则只增加数目，若没有添加该商品
 				var check = false;
 				for(var i=0; i<localStorage.length;i++){
 					var currentItem = localStorage.getItem(localStorage.key(i));
@@ -94,7 +94,7 @@ $(function(){
 					return true;
 				}
 				//localStorage.clear();
-				var items = {
+				var items = {//将所需数据包装为JSON
 					// "$(val).find('#name').text()":
 					"name":$(val).find('#name').text(),
 					"price":$(val).find('#count').attr('price'),
@@ -106,7 +106,7 @@ $(function(){
 			return true;
 		}
 	})
-	$('html').on('click','button',function(e){//每次点击后计算购物车中商品的总价格
+	$('html').on('click','button',function(e){//每次触发商品变化的事件后计算购物车中商品的总价格
 		countTotal();
 	})
 	function countTotal(){
